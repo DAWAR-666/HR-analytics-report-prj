@@ -6,10 +6,27 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="dataGiven"></div>
+    <div id="sort"></div>
+
     <script>
-        let file=fetch('https://gist.github.com/yash2324/aabffcf0729fd5750d9d21af9a1230c8.js')
-        let data=file.json();
+        const dataGiven=document.getElementById('dataGiven');
+        async function getdata(){
+        let file=await fetch('hr.json');
+        let data=await file.json()
+   
+        return data
+    }
+    async function display() {
+        let data=await getdata();
+        dataGiven.innerText=JSON.stringify(data);
+        
+    }
+    async function sortdata(){
+        let data=await getdata();
         console.log(data);
+    }
+ display()
     </script>
 </body>
 </html>
