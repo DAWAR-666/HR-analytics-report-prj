@@ -29,8 +29,21 @@
             console.log(sortedData);
             return sortedData;
      }
+     function ignore(x) {
+        return x.experience>=3;
+
+     }
      async function summary() {
-        
+        let data=await sortdata();
+        filterData=data.filter(ignore)
+        console.log(filterData);
+        let sum_list=[];
+        filterData.forEach(element => {
+            let obj={name:element.name,department:element.department,annualBonus:element.salary*0.1*element.experience}
+            sum_list.push(obj);
+            
+        });
+        console.log(sum_list)
      }
  display()
     </script>
