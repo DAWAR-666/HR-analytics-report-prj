@@ -44,7 +44,13 @@
             
         });
         console.log(sum_list)
+        const total=filterData.reduce(function(acc,curr){
+            acc=acc+curr.salary;
+            return acc;
+        },0)
+        console.log(total);
      }
+
  display()
     </script>
 </body>
