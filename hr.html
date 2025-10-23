@@ -19,13 +19,19 @@
     }
     async function display() {
         let data=await getdata();
-        dataGiven.innerText=JSON.stringify(data);
+        console.log(typeof data)
+        dataGiven.innerText=JSON.stringify(data,null,2);
         
     }
-    async function sortdata(){
-        let data=await getdata();
-        console.log(data);
-    }
+     async function sortdata(){
+         let data=await getdata();
+         const sortedData=data.toSorted((a,b)=>b.salary-a.salary)
+            console.log(sortedData);
+            return sortedData;
+     }
+     async function summary() {
+        
+     }
  display()
     </script>
 </body>
