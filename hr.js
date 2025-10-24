@@ -2,6 +2,10 @@
         const tablebody=document.getElementById('enter');
         const total=document.getElementById('total');
         const bonus=document.getElementById('change');
+        const btnGiven=document.getElementById('givenData')
+        const btnSort=document.getElementById('sorted')
+        const btnSum=document.getElementById('summary')
+        
         async function getdata(){
         let file=await fetch('hr.json');
         let data=await file.json()
@@ -69,5 +73,7 @@
         total.innerText=text1;
         
      }
-     
+btnGiven.addEventListener('click',getdata);
+btnSort.addEventListener('click',sortdata)
+btnSum.addEventListener('click',summary)
 
