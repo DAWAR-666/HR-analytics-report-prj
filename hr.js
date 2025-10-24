@@ -32,11 +32,13 @@
     async function display() {
         let data=await getdata();
         addData(data);
+        total.innerText=null;
     }
      async function sortdata(){
          let data=await getdata();
          const sortedData=data.toSorted((a,b)=>b.salary-a.salary)
-         addData(sortedData) 
+         addData(sortedData)
+         total.innerText=null;
          return sortedData;  
      }
      function ignore(x) {
@@ -73,7 +75,7 @@
         total.innerText=text1;
         
      }
-btnGiven.addEventListener('click',getdata);
+btnGiven.addEventListener('click',display);
 btnSort.addEventListener('click',sortdata)
 btnSum.addEventListener('click',summary)
 
