@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>hr-analytics-prj</title>
+    <link rel="stylesheet" href="hr.css">
 </head>
 <body>
-    <div id="dataGiven"></div>
-    <div id="sort"></div>
+    <div class="full">
+        <div class="buttons">
+            <button id="givenData">GIVEN DATA</button>
+            <button id="sorted">SORTED</button>
+            <button id="summary">SUMMARY</button>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>dept</th>
+                        <th id="change">salary</th>
+                        <th>exp</th>
+                    </tr>
+                    <tbody id="enter">
 
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+        <div id="total"></div>
+    </div>
     <script src="hr.js">
     </script>
 </body>
